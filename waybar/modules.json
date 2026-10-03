@@ -23,11 +23,11 @@
     }
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{icon}  {volume}%  {format_source}",
-    "format-bluetooth-muted": "  {icon}  {format_source}",
-    "format-muted": "󰋐 {format_source}",
-    "format-source": " {volume}%",
+    "format": "{icon}",
+    "format-bluetooth": "{icon} ",
+    "format-bluetooth-muted": " {icon} ",
+    "format-muted": "󰋐",
+    "format-source": "",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
@@ -56,6 +56,30 @@
     "format": "  {}%",
     "tooltip": true
   },
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 300,
+        "children-class": "not-memory",
+        "transition-left-to-right": false
+    },
+    "modules": [
+        "custom/system",
+        "disk",
+        "cpu",
+        "memory",
+        "temperature"
+    ]
+  },
+  "custom/system": {
+    "format": "",
+    "tooltip": false
+  },
+  "disk": {
+    "interval": 30,
+    "format": "  {percentage_used}%",
+    "path": "/"
+  },
   "temperature": {
     "interval": 10,
     "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
@@ -69,7 +93,7 @@
     "format-es": "ES"
   },
   "backlight": {
-    "format": "{percent}% {icon}",
+    "format": "{icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
   "battery": {
