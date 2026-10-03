@@ -15,6 +15,7 @@
     "modules-right": [
         "idle_inhibitor",
         "pulseaudio",
+        "bluetooth",
         "network",
         "cpu",
         "memory",
@@ -22,7 +23,9 @@
         "hyprland/language",
         "backlight",
         "battery",
-        "clock"
+        "clock",
+        "custom/notification",
+        "custom/power"
     ],
     "include": [
 		"~/.config/waybar/modules.json"
