@@ -1,6 +1,5 @@
 * {
-    /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
-    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Ubuntu Nerd Font", "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 15px;
     transition: background-color .3s ease-out;
 }
@@ -9,6 +8,7 @@ window#waybar {
     background: transparent;
     color: #c0caf5;
     font-family: 
+        "Ubuntu Nerd Font",
         SpaceMono Nerd Font,
         feather;
     transition: background-color .5s;
@@ -77,6 +77,7 @@ window#waybar {
 #workspaces button {
   background: transparent;
   font-family:
+    "Ubuntu Nerd Font",
     SpaceMono Nerd Font,
     feather;
   font-weight: 900;
