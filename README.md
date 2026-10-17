@@ -101,13 +101,11 @@ yay -S hyprshot bemoji iwgtk
 .
 ├── bin/           # Scripts utilitarios (control de brillo, volumen OSD, etc.)
 ├── btop/          # Temas y configuración del monitor btop
-├── cursor/        # Accesos directos y configuración de Cursor
 ├── ghostty/       # Configuración de Ghostty (Tokyo Night + fondo negro)
 ├── git/           # Configuración global de Git
 ├── hypr/          # Hyprland, hypridle y hyprlock
 ├── kitty/         # Configuración y temas de Kitty
 ├── swaync/        # Configuración del centro de notificaciones SwayNC
-├── vscode/        # Settings y keybindings de VSCode
 ├── wallpapers/    # Fondos de pantalla utilizados por swaybg
 ├── waybar/        # Barra superior con estilos Catppuccin Mocha y módulos
 ├── wlogout/       # Layouts y estilos del menú de apagado

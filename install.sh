@@ -85,7 +85,7 @@ mkdir -p "$HOME/.config"
 OMARCHY_EXISTS=false
 if [[ -d "$HOME/.local/share/omarchy" ]]; then
   OMARCHY_EXISTS=true
-  echo -e "${YELLOW}⚠️  Omarchy configuration detected - skipping ghostty, hyprland, wofi, waybar, btop, and cursor${NC}"
+  echo -e "${YELLOW}⚠️  Omarchy configuration detected - skipping ghostty, hyprland, wofi, waybar, and btop${NC}"
 fi
 
 # Install configs that go to ~/.config/
@@ -146,58 +146,6 @@ echo -e "\n${BLUE}🐚 Installing Zsh configuration...${NC}"
 if [[ -f "$DOTFILES_DIR/zsh/zshrc" ]]; then
   create_symlink "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc" "Zsh configuration"
 fi
-
-# VSCode settings (if VSCode is installed)
-echo -e "\n${BLUE}👨‍💻 Installing VSCode settings...${NC}"
-if command -v code &> /dev/null; then
-  if [[ "$OS" == "mac" ]]; then
-    VSCODE_CONFIG_DIR="$HOME/Library/Application Support/Code/User"
-  else
-    VSCODE_CONFIG_DIR="$HOME/.config/Code/User"
-  fi
-  
-  if [[ -f "$DOTFILES_DIR/vscode/settings.json" ]]; then
-    create_symlink "$DOTFILES_DIR/vscode/settings.json" "$VSCODE_CONFIG_DIR/settings.json" "VSCode settings"
-    create_symlink "$DOTFILES_DIR/vscode/keybindings.json" "$VSCODE_CONFIG_DIR/keybindings.json" "VSCode keybindings"
-  fi
-else
-  echo -e "${YELLOW}  VSCode not found, skipping VSCode configuration${NC}"
-fi
-
-# Cursor editor settings
-if [[ "$OMARCHY_EXISTS" == false ]]; then
-  echo -e "\n${BLUE}🖱️  Installing Cursor editor settings...${NC}"
-  # Copy VSCode settings to Cursor
-  if [[ -f "$DOTFILES_DIR/vscode/settings.json" ]]; then
-    if [[ "$OS" == "mac" ]]; then
-      CURSOR_CONFIG_DIR="$HOME/Library/Application Support/Cursor/User"
-    else
-      CURSOR_CONFIG_DIR="$HOME/.config/Cursor/User"
-    fi
-
-    create_symlink "$DOTFILES_DIR/vscode/settings.json" "$CURSOR_CONFIG_DIR/settings.json" "Cursor settings"
-    create_symlink "$DOTFILES_DIR/vscode/keybindings.json" "$CURSOR_CONFIG_DIR/keybindings.json" "Cursor keybindings"
-  fi
-
-  if [[ -d "$DOTFILES_DIR/cursor" ]]; then
-    if [[ "$OS" == "linux" ]]; then
-      # Install Cursor desktop file and icon
-      if [[ -f "$DOTFILES_DIR/cursor/cursor.desktop" ]]; then
-        create_symlink "$DOTFILES_DIR/cursor/cursor.desktop" "$HOME/.local/share/applications/cursor.desktop" "Cursor desktop file"
-      fi
-      if [[ -f "$DOTFILES_DIR/cursor/cursor.png" ]]; then
-        mkdir -p "$HOME/.local/share/icons"
-        create_symlink "$DOTFILES_DIR/cursor/cursor.png" "$HOME/.local/share/icons/cursor.png" "Cursor icon"
-      fi
-      if [[ -f "$DOTFILES_DIR/cursor/cursor" ]]; then
-        mkdir -p "$HOME/.local/bin"
-        create_symlink "$DOTFILES_DIR/cursor/cursor" "$HOME/.local/bin/cursor" "Cursor executable"
-        chmod +x "$HOME/.local/bin/cursor"
-      fi
-    fi
-  fi
-fi
-
 # Install bin scripts
 echo -e "\n${BLUE}🔧 Installing utility scripts...${NC}"
 if [[ -d "$DOTFILES_DIR/bin" ]]; then
