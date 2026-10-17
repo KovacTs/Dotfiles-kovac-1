@@ -4,3 +4,4 @@ background-opacity = 0.97
 window-padding-x = 2
 keybind = shift+enter=text:\n
 
+background = #000000

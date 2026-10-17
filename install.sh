@@ -121,6 +121,21 @@ if [[ "$OMARCHY_EXISTS" == false && "$OS" == "linux" && -d "$DOTFILES_DIR/wofi" 
   create_symlink "$DOTFILES_DIR/wofi" "$HOME/.config/wofi" "Wofi launcher config"
 fi
 
+# SwayNC notification center (Linux only)
+if [[ "$OMARCHY_EXISTS" == false && "$OS" == "linux" && -d "$DOTFILES_DIR/swaync" ]]; then
+  create_symlink "$DOTFILES_DIR/swaync" "$HOME/.config/swaync" "SwayNC notification center config"
+fi
+
+# Wlogout logout menu (Linux only)
+if [[ "$OMARCHY_EXISTS" == false && "$OS" == "linux" && -d "$DOTFILES_DIR/wlogout" ]]; then
+  create_symlink "$DOTFILES_DIR/wlogout" "$HOME/.config/wlogout" "Wlogout logout menu config"
+fi
+
+# Wallpapers (used by swaybg)
+if [[ -d "$DOTFILES_DIR/wallpapers" ]]; then
+  create_symlink "$DOTFILES_DIR/wallpapers" "$HOME/wallpapers" "Wallpapers directory (swaybg)"
+fi
+
 # Zellij terminal multiplexer
 if [[ -d "$DOTFILES_DIR/zellij" ]]; then
   create_symlink "$DOTFILES_DIR/zellij" "$HOME/.config/zellij" "Zellij terminal multiplexer config"
