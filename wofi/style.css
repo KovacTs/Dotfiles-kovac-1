@@ -50,6 +50,9 @@
 @define-color	mantle-rgb  rgb(24, 24, 37);
 @define-color	crust  #11111b;
 @define-color	crust-rgb  rgb(17, 17, 27);
+@define-color	black  #000000;
+@define-color	neon  #39ff14;
+@define-color	electric  #0080ff;
 
 * {
   font-family: 'CaskaydiaCove Nerd Font', monospace;
@@ -60,9 +63,9 @@
 window {
   margin: 0px;
   padding: 10px;
-  border: 2px solid @lavender;
+  border: 1px solid @electric;
   border-radius: 8px;
-  background-color: @base;
+  background-color: @black;
 }
 
 /* Inner Box */
@@ -70,7 +73,7 @@ window {
   margin: 5px;
   padding: 10px;
   border: none;
-  background-color: @base;
+  background-color: @black;
 }
 
 /* Outer Box */
@@ -78,7 +81,7 @@ window {
   margin: 5px;
   padding: 10px;
   border: none;
-  background-color: @base;
+  background-color: @black;
 }
 
 /* Scroll */
@@ -86,7 +89,7 @@ window {
   margin: 0px;
   padding: 10px;
   border: none;
-  background-color: @base;
+  background-color: @black;
 }
 
 /* Input */
@@ -96,7 +99,7 @@ window {
   border: none;
   border-radius: 0.1em;
   color: @text;
-  background-color: @base;
+  background-color: @black;
 }
 
 #input image {
@@ -116,7 +119,7 @@ window {
 }
 
 #entry {
-  background-color: @base;
+  background-color: @black;
 }
 
 #entry arrow {
@@ -126,7 +129,7 @@ window {
 
 /* Selected Entry */
 #entry:selected {
-  border: 0.11em solid @lavender;
+  border: 0.11em solid @electric;
 }
 
 #entry:selected #text {

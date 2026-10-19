@@ -1,0 +1,38 @@
+/* Vista "galería": reutiliza todo el estilo base y solo ajusta las entradas */
+/* Ruta absoluta: wofi carga el CSS desde memoria y una ruta relativa
+   se resolvería contra el directorio actual, no contra este archivo */
+@import url("file:///home/kovac/.config/wofi/style.css");
+
+/* Ventana: borde azul eléctrico con esquinas redondeadas */
+window {
+  border: 1px solid @electric;
+  border-radius: 8px;
+  background-color: @black;
+}
+
+/* Barra de búsqueda: separada del borde de la ventana y de las apps */
+#input {
+  margin: 15px 25px 20px 25px;
+  padding: 10px 14px;
+  background-color: @black;
+}
+
+
+#entry {
+  margin: 4px;
+  padding: 12px;
+  border: 0.11em solid transparent;
+  border-radius: 8px;
+}
+
+#entry:selected {
+  border: 0.11em solid @electric;
+}
+
+#img {
+  margin-right: 8px;
+}
+
+#text {
+  font-size: 14px;
+}
